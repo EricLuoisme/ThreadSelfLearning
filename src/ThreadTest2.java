@@ -9,7 +9,7 @@ import java.net.URL;
  *
  * @author lykis
  */
-public class ThreadTest2 extends Thread {
+public class ThreadTest2 implements Runnable {
 
     private String url;
     private String name;
@@ -37,9 +37,9 @@ public class ThreadTest2 extends Thread {
         ThreadTest2 thread3 = new ThreadTest2(url, name + "3.jpg");
 
         // they did not download follow the order of how they were created
-        thread1.start();
-        thread2.start();
-        thread3.start();
+        new Thread(thread1).start();
+        new Thread(thread2).start();
+        new Thread(thread3).start();
 
     }
 
