@@ -6,6 +6,8 @@ public class YieldTest {
         MyYield myYield = new MyYield();
         new Thread(myYield, "A").start();
         new Thread(myYield, "B").start();
+        new Thread(myYield, "C").start();
+        new Thread(myYield, "D").start();
     }
 
 }
